@@ -1,0 +1,472 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+.App {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  background: rgb(255, 255, 255);
+  color:black;
+  font-family: 'Poppins', sans-serif;
+}
+
+.App{
+  min-height: 100vh;
+  display: flex;
+}
+
+.sideBar{
+  flex: 3;
+  /* border-right: 1px solid rgb(100, 100, 100); */
+  background: #ffffff;
+}
+
+.main{
+flex: 9;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+position: relative;
+}
+
+.logo{
+  margin-right:1rem ;
+  width: 70%;
+}
+
+.brand{
+  font-size: 2rem;
+}
+
+.upperSide{
+  padding: 2.5rem;
+  /* border-bottom: 1px solid rgb(100, 100, 100); */
+  height: 80%;
+
+}
+
+.upperSideTop{
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+
+}
+.addBtn{
+  height: 1.5rem;
+  padding-right: 1rem;
+}
+
+.midBtn{
+  background: #249dd0;
+  border: none;
+  color: white;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  width: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.query{
+  display: flex;
+  align-items: center;
+  background: transparent;
+  color: black;
+  padding: 1.5rem;
+  width: 25rem;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+  border:1px solid rgba(98, 98, 98, 1)
+}
+
+.query>img{
+  margin-right: 2rem;
+  object-fit: cover;
+  height: 1.75rem;
+
+}
+
+
+
+.listItems{
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.listItemsImg{
+  margin: 1rem;
+  padding-right: 1rem;
+  color: #000;
+}
+
+.listItems:nth-child(1)>.listItemsImg{
+  margin-inline-start: 0.5;
+}
+.listItems:nth-child(3)>.listItemsImg{
+  margin-inline-start: 0.7;
+}
+
+
+.main{
+  min-height: calc(100vh- 14rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 6rem 10rem;
+  margin-bottom: 0;
+}
+.chats{
+
+
+  height: calc(100vh-17rem);
+  overflow-y: auto;
+  max-height: calc(100vh - 200px); /* Adjust the height as needed */
+  padding: 10px;
+  width: 100%;
+  max-width: 70rem;
+  scroll-behavior: smooth;
+  
+
+}
+
+.chat{
+  margin: 1rem;
+  padding: 2rem 3rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  text-align:left
+}
+.chatImg{
+  object-fit: cover;
+  width: 3.5rem;
+  margin-right: 2rem;
+  border-radius: 0.5rem;
+}
+
+.bot{
+  background: rgb(247, 247, 247);
+  width: fit-content;
+  border-radius: 0.5rem;
+}
+
+.chatFooter{
+  margin-top:auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inp{
+  padding: 0.5rem;
+  background: rgb(235, 235, 235);
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  width: 70rem;
+}
+
+.inp>input{
+  width: calc(100% - 3rem);
+  outline: none;
+  padding: 1.25rem;
+  color: black;
+}
+
+.inp>input, .send{
+background: transparent;
+border: none;
+}
+
+.chatFooter>p{
+margin: 2rem 0;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensures the loader is on top of everything */
+}
+
+.loader {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  animation: l38 0.5s infinite linear; 
+  --_g: no-repeat radial-gradient(farthest-side, #000 94%, #0000);
+  background:
+    var(--_g) 0 0,
+    var(--_g) 100% 0,
+    var(--_g) 100% 100%,
+    var(--_g) 0 100%;
+  background-size: 40% 40%;
+}
+
+@keyframes l38 {
+  100% { background-position: 100% 0, 100% 100%, 0 100%, 0 0; }
+}
+
+
+
+
+
+
+
+
+/* HTML: <div class="loader"></div> */
+.ai-loader {
+  width: 40px;
+  height: 20px;
+  --c:no-repeat radial-gradient(farthest-side,#000 93%,#0000);
+  background:
+    var(--c) 0    0,
+    var(--c) 50%  0;
+  background-size: 8px 8px;
+  position: relative;
+  clip-path: inset(-200% -100% 0 0);
+  animation: l6-0 1.5s linear infinite;
+}
+/* Add this to your App.css or any appropriate CSS file */
+.active-session {
+  color: white; /* White text for contrast */
+}
+
+.active-session .query {
+  color: rgb(0, 0, 0); 
+  background-color:#eeeeee ;/* Ensure the text color of the button is white */
+}
+
+.ai-loader:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 12px;
+  background: #000;
+  left: -16px;
+  top: 0;
+  animation: 
+    l6-1 1.5s linear infinite,
+    l6-2 0.5s cubic-bezier(0,200,.8,200) infinite;
+}
+.ai-loader:after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #000; 
+  animation: l6-3 1.5s linear infinite;
+}
+@keyframes l6-0 {
+  0%,30%  {background-position: 0  0   ,50% 0   }
+  33%     {background-position: 0  100%,50% 0   }
+  41%,63% {background-position: 0  0   ,50% 0   }
+  66%     {background-position: 0  0   ,50% 100%}
+  74%,100%{background-position: 0  0   ,50% 0   }
+}
+@keyframes l6-1 {
+  90%  {transform:translateY(0)}
+  95%  {transform:translateY(15px)}
+  100% {transform:translateY(15px);left:calc(100% - 8px)}
+}
+@keyframes l6-2 {
+  100% {top:-0.1px}
+}
+@keyframes l6-3 {
+  0%,80%,100% {transform:translate(0)}
+  90%         {transform:translate(26px)}
+}
+
+
+.session-list {
+  max-height: 400px; /* Set the height as needed */
+  overflow-y: scroll; /* Allow scrolling */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.session-list::-webkit-scrollbar {
+  width: 0; /* Hide the scrollbar */
+  background: transparent; /* Optional: make background transparent */
+}
+
+/* For Firefox */
+.session-list {
+  scrollbar-width: none; /* Hide the scrollbar */
+}
+
+/* For Internet Explorer, Edge */
+.session-list {
+  -ms-overflow-style: none; /* Hide the scrollbar */
+}
+
+
+.upperSideBottom {
+  height: 400px; /* Set a fixed height as needed */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding-right: 10px; /* Add some padding to prevent the scrollbar from overlaying the content */
+}
+
+.session-item {
+  display: flex;
+  align-items: center;
+
+}
+
+.query {
+  flex: 1;
+  border: none;
+  transition: background-color 0.3s ease; /* Smooth transition */
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  cursor: pointer;
+  max-width: calc(100% - 60px); /* Adjust the width to make space for the delete icon */
+  height: 3rem; /* Set the desired height */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+  margin: 0.3rem auto; /* Reduced margin from 1rem to 0.5rem */
+}
+.query:hover {
+  background-color: #d3d3d3; /* Gray background on hover */
+}
+
+.query img {
+  margin-right: 10px;
+}
+
+.delete-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Full height of the parent container */
+  width: 100%;  /* Full width of the parent container */
+}
+
+
+/* This container ensures the loader is centered */
+.session-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Full height to center the loader */
+  width: 100%; /* Full width */
+}
+
+/* Centering the loader itself */
+.session-loader {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  animation: l38 0.5s infinite linear; 
+  --_g: no-repeat radial-gradient(farthest-side, #000 94%, #0000);
+  background:
+    var(--_g) 0 0,
+    var(--_g) 100% 0,
+    var(--_g) 100% 100%,
+    var(--_g) 0 100%;
+  background-size: 40% 40%;
+}
+
+@keyframes l38 {
+  100% { background-position: 100% 0, 100% 100%, 0 100%, 0 0; }
+}
+.session-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.session-title {
+  font-size: 1.7em;
+}
+
+.refresh-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.no-history-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Full height of the parent */
+  width: 100%; /* Full width of the parent */
+}
+
+.no-history {
+  font-size: 1.2em;
+  color: #888;
+}
+
+.session-item.disabled {
+  opacity: 0.5;
+  pointer-events: none; /* Disable all interactions */
+}
+
+.delete-icon.rotating {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* App.css */
+
+.ready-container {
+  margin-top: 30%;
+  text-align: center;
+  padding: 20px;
+  color: #555;
+}
+
+.ready-icon {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 10px;
+}
+
+.ready-text {
+  font-size: 1.5em;
+}

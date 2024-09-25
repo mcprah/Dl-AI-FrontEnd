@@ -1,0 +1,49 @@
+.landing-page {
+    text-align: center;
+    background-color: rgb(255, 255, 255);;
+    min-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .center-logo {
+    height: 80px;
+    margin-bottom: 40px;
+  }
+  
+  .options {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .option-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    width: 180px;
+    color: black; /* Text color set to black */
+  }
+  
+  .option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .option-card p {
+    margin: 10px 0 0;
+    font-size: 13px;
+
+  }
+  
+  .icon {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
