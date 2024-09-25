@@ -192,7 +192,7 @@ function MainPage() {
           ...prevMessages.slice(0, -1),
           aiMessage,
         ]);
-        setRefreshSidebar(true);
+        setRefreshSidebar((prevRefresh) => !prevRefresh);
       } else {
         alert("Failed to get a response from the AI");
         setMessages((prevMessages) => prevMessages.slice(0, -1));
@@ -202,6 +202,7 @@ function MainPage() {
       setMessages((prevMessages) => prevMessages.slice(0, -1));
     }
   };
+
 
   return (
     <div className="App">
