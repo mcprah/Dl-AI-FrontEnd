@@ -18,7 +18,7 @@ function Upload() {
     setMessages([]);  // Clear previous messages
   
     try {
-      const response = await fetch('https://backend-615425956737.us-central1.run.app/discovery/reported', {
+      const response = await fetch(' http://127.0.0.1:5000/discovery/reported', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -68,13 +68,12 @@ function Upload() {
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
 
         <label>Number of Rows to Convert:</label>
-        <input type="number" value={numRows} onChange={(e) => setNumRows(e.target.value)} required />
+        <input type="number" value={numRows} onChange={(e) => setNumRows(e.target.value)}/>
 
         <label>Case Type:</label>
         <select value={caseType} onChange={(e) => setCaseType(e.target.value)}>
           <option value="reported">Reported</option>
         </select>
-
         <button type="submit" disabled={loading}>
           {loading ? 'Processing... Please wait' : 'Upload'}
         </button>
