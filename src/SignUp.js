@@ -5,7 +5,7 @@ import './SignUp.css';
 function Signup() {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
-  const [fullname, setFullname] = useState(''); // Corrected state for fullname
+  const [fullname, setFullname] = useState(''); 
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
@@ -13,7 +13,7 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const response = await fetch(' https://backend-615425956737.us-central1.run.app/auth/signup', {
+      const response = await fetch('  http://127.0.0.1:5000/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ function Signup() {
         // Assuming the API returns some user data upon successful signup
         navigate('/login'); // Navigate to the protected route after signup
       } else {
-        alert('Signup failed, please try again.');
+        alert('User already exists!.');
       }
     } catch (error) {
       console.error('Error:', error);

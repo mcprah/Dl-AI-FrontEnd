@@ -65,7 +65,7 @@ function MainPage() {
         return;
       }
 
-      const response = await fetch(" https://backend-615425956737.us-central1.run.app/discovery/start", {
+      const response = await fetch("  http://127.0.0.1:5000/discovery/start", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -106,7 +106,7 @@ function MainPage() {
       const parsedSessionId = sessionId?.split("/").pop();
       // Fetch the messages for the selected session
       const response = await fetch(
-        ` https://backend-615425956737.us-central1.run.app/discovery/session/?name=${parsedSessionId}`,
+        `  http://127.0.0.1:5000/discovery/session/?name=${parsedSessionId}`,
         {
           method: "GET",
           headers: {
@@ -169,7 +169,7 @@ function MainPage() {
     ]);
     setIsRealTime(true); // Enable typewriter effect for real-time AI response
     try {
-      const response = await fetch(" https://backend-615425956737.us-central1.run.app/discovery/chat", {
+      const response = await fetch("  http://127.0.0.1:5000/discovery/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
