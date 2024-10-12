@@ -18,7 +18,7 @@ function Upload() {
     setMessages([]);  // Clear previous messages
   
     try {
-      const response = await fetch(' http://127.0.0.1:5000/discovery/reported', {
+      const response = await fetch(' https://dennislaw-backend-docker-gcr-image-615425956737.us-central1.run.app/discovery/reported', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
