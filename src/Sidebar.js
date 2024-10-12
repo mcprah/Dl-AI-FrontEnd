@@ -23,7 +23,7 @@ function Sidebar({ handleSessionClick, refreshSidebar }) {
         return;
       }
 
-      const response = await fetch(` http://127.0.0.1:5000/discovery/sessions/?userPseudoId=${userPseudoId}`);
+      const response = await fetch(` https://dennislaw-backend-docker-gcr-image-615425956737.us-central1.run.app/discovery/sessions/?userPseudoId=${userPseudoId}`);
       if (response.ok) {
         const data = await response.json();
         if (Array.isArray(data)) {
@@ -60,7 +60,7 @@ function Sidebar({ handleSessionClick, refreshSidebar }) {
     setDeletingSessionId(id); // Set the session as being deleted
 
     try {
-      const response = await fetch(`  http://127.0.0.1:5000/discovery/delete/?id=${id}`, {
+      const response = await fetch(`  https://dennislaw-backend-docker-gcr-image-615425956737.us-central1.run.app/discovery/delete/?id=${id}`, {
         method: 'DELETE',
       });
 
